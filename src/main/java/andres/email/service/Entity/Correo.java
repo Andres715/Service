@@ -2,6 +2,8 @@ package andres.email.service.Entity;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;
@@ -19,7 +21,7 @@ public class Correo implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-
+    
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Basic(optional = false)
@@ -37,6 +39,9 @@ public class Correo implements Serializable{
 	
 	@Column(name = "date")
 	private Date date = new Date();
+	
+	@Column(name = "hour")
+    private Date hour = new Date();
 
 	public Integer getIdcorreo() {
 		return idcorreo;
@@ -77,5 +82,15 @@ public class Correo implements Serializable{
 	public void setDate(Date date) {
 		this.date = date;
 	}
+
+	public Date getHour() {
+		return hour;
+	}
+
+	public void setHour(Date hour) {
+		this.hour = hour;
+	}
+	
+	
 	
 }
