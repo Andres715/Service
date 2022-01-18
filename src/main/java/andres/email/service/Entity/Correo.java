@@ -42,7 +42,7 @@ public class Correo implements Serializable{
 	private Date date = new Date();
 	
 	@Column(name = "hour")
-    	private String hour = new SimpleDateFormat("HH:mm").format(Calendar.getInstance().getTime());
+    	private Date hour = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
 
 	public Integer getIdcorreo() {
 		return idcorreo;
@@ -84,11 +84,11 @@ public class Correo implements Serializable{
 		this.date = date;
 	}
 
-	public String getHour() {
+	public Date getHour() {
 		return hour;
 	}
 
-	public void setHour(String hour) {
+	public void setHour(Date hour) {
 		this.hour = hour;
 	}
 	
