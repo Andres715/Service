@@ -1,6 +1,7 @@
 package andres.email.service.Entity;
 
 import java.io.Serializable;
+import java.util.Calendar;
 import java.util.Date;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -30,7 +31,7 @@ public class Correo implements Serializable{
 	
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "email")
 	private String email;
 	
@@ -41,7 +42,7 @@ public class Correo implements Serializable{
 	private Date date = new Date();
 	
 	@Column(name = "hour")
-    private Date hour = new Date();
+    private String hour = new SimpleDateFormat("HH:mm:ss").format(Calendar.getInstance().getTime());
 
 	public Integer getIdcorreo() {
 		return idcorreo;
@@ -83,11 +84,11 @@ public class Correo implements Serializable{
 		this.date = date;
 	}
 
-	public Date getHour() {
+	public String getHour() {
 		return hour;
 	}
 
-	public void setHour(Date hour) {
+	public void setHour(String hour) {
 		this.hour = hour;
 	}
 	
